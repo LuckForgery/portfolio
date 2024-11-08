@@ -4,6 +4,7 @@ import "./App.css";
 import StarryCanvas from "./StarryCanvas.jsx";
 
 function App() {
+  /*
   const [imageSize, setImageSize] = useState(430);
   const [imagePosition, setImagePosition] = useState(0); // Add a new state to track the image position
 
@@ -39,6 +40,14 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+
+  ref={profileImgRef}
+  style={{
+    height: `${imageSize}px`,
+    transform: `translateY(${imagePosition}px)`,
+  }}
+*/
   return (
     <>
       <div className="navBar">
@@ -72,16 +81,7 @@ function App() {
           </tr>
         </table>
       </div>
-      <img
-        id="profile"
-        ref={profileImgRef}
-        style={{
-          height: `${imageSize}px`,
-          transform: `translateY(${imagePosition}px)`,
-        }}
-        src={process.env.PUBLIC_URL + "/profile.jpeg"}
-        alt="Profile Image"
-      />
+      <img id="profile" alt="profile" />`
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
