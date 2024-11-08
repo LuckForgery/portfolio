@@ -37,6 +37,13 @@
     }
 }
 
+body {
+    display: block;
+    background: #161616;
+    width: 100%;
+    height: 5000px;
+}
+
 :start {
     height: 300px;
     width: 150px;
