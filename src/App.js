@@ -80,7 +80,28 @@ function App() {
           height: `${imageSize}px`,
           transform: `translateY(${imagePosition}px)`,
         }}
+        ref={profileImgRef}
       />
+      <div ref={divRef} className="bufferTop">
+        <a>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          We shouldn't spend our lives dreaming success.
+          <br />
+          Let's make this happen, <span className="blue">together</span>.
+        </a>
+      </div>
+      <div className="profile">
+        <div className="stars">
+          <StarryCanvas className="canvas" />
+        </div>
+        <a>Pro. Beyond</a>
+      </div>
+      <div className=""></div>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

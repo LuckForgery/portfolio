@@ -103,3 +103,52 @@
     min-height: 10px;
     z-index: 6;
 }
+
+:buffertop {
+    min-height: 200px;
+    height: 220px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+:buffertop a {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+:profile {
+    background: black;
+    height: 75vh;
+    max-height: 800px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+:profile :stars {
+    position: absolute;
+    align-items: center;
+    z-index: 0;
+    display: flex;
+    width: 100vw;
+    -webkit-mask-image: linear-gradient(to bottom, black 1%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+:profile a {
+    color: white;
+    font-size: 100px;
+    font-weight: 500;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15vh;
+    display: flex;
+    z-index: 1;
+}
+
+:blue {
+    color: #0077b5;
+    font-weight: 500;
+}
