@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import logo from "./profile.jpeg";
 import "./App.css";
-import StarryCanvas from "./StarryCanvas";
+import StarryCanvas from "./StarryCanvas.jsx";
 
 function App() {
   return (
