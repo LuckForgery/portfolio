@@ -1,5 +1,7 @@
+import React, { useState, useRef, useEffect } from "react";
 import logo from "./profile.jpeg";
 import "./App.css";
+import StarryCanvas from "./StarryCanvas";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         >
           Learn React
         </a>
+        <div className="stars">
+          <StarryCanvas className="canvas" />
+        </div>
       </header>
     </div>
   );
