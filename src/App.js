@@ -58,7 +58,7 @@ function App() {
             </td>
           </tr>
           <tr className="details">
-            <td id="name">Darius IC Boteand</td>
+            <td id="name">Darius Boteand</td>
             <td id="LinkedIn">
               <div
                 onClick={() => {
