@@ -4,12 +4,12 @@ import "./App.css";
 import StarryCanvas from "./StarryCanvas.jsx";
 
 function App() {
+  const profileImgRef = useRef(null);
   /*
   const [imageSize, setImageSize] = useState(430);
   const [imagePosition, setImagePosition] = useState(0); // Add a new state to track the image position
 
   const divRef = useRef(null);
-  const profileImgRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,7 +81,7 @@ function App() {
           </tr>
         </table>
       </div>
-      <img id="profile" alt="profile" />`
+      <img src={logo} ref={profileImgRef} id="profile" alt="profile" />
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
