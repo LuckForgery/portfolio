@@ -87,3 +87,19 @@
     border-radius: 20px;
     cursor: pointer;
 }
+
+#profile {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 400px;
+    color: white;
+    max-height: 45vh;
+    min-height: 10px;
+    z-index: 6;
+}
