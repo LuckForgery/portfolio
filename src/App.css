@@ -118,7 +118,7 @@ body {
 }
 
 .buffer {
-    //display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     margin: auto;
