@@ -106,7 +106,17 @@ function App() {
           Ultimately all of this is just for fun, and I'm more than happy to
           collaborate for more!
         </p>
-        <div id="cv">cv</div>
+        <div
+          id="cv"
+          onMouseDown={(e) => {
+            e.target.style.color = "#1f45a4";
+          }}
+          onMouseUp={(e) => {
+            e.target.style.color = "#0077b5";
+          }}
+        >
+          cv
+        </div>
       </div>
       <div className=""></div>
     </>
