@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import logo from "./profile.jpeg";
 import "./App.css";
 import StarryCanvas from "./StarryCanvas.jsx";
+import cv from "./cv/DariusB.pdf";
 
 function App() {
   const [imageSize, setImageSize] = useState(430);
@@ -105,7 +106,9 @@ function App() {
           Ultimately all of this is just for fun, and I'm more than happy to
           collaborate for more!
         </p>
-        <div id="cv">cv</div>
+        <div id="cv">
+          <a href={cv}>cv</a>
+        </div>
       </div>
       <div className=""></div>
     </>
