@@ -106,7 +106,7 @@ function App() {
           Ultimately all of this is just for fun, and I'm more than happy to
           collaborate for more!
         </p>
-        <div id="cv">CV</div>
+        <div id="cv">cv</div>
       </div>
       <div className=""></div>
     </>
