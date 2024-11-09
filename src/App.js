@@ -44,17 +44,17 @@ function App() {
       <div className="navBar">
         <table>
           <tr className="menue">
-            <td id="m1" href="#bufferTop">
-              <a>Home Section</a>
+            <td id="m1">
+              <a href="#bufferTop">Home Section</a>
             </td>
-            <td id="m2" href="#">
-              <a>Experience</a>
+            <td id="m2">
+              <a href="#">Experience</a>
             </td>
-            <td id="m3" href="#">
-              <a>Active Skills</a>
+            <td id="m3">
+              <a href="#">Active Skills</a>
             </td>
-            <td id="m4" href="#">
-              <a>My Solutions</a>
+            <td id="m4">
+              <a href="#">My Solutions</a>
             </td>
           </tr>
           <tr className="details">
