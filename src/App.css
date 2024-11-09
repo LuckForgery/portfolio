@@ -126,9 +126,8 @@ body {
 
 .buffer p {
     color: red;
-    //align-items: center;
-    //margin-left: auto;
-    //margin-right: auto;
-    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     z-index: 1;
 }
