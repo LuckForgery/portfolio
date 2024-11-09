@@ -124,8 +124,7 @@ body {
     margin: auto;
 }
 
-.buffer h3,
-a {
+.buffer h3 a {
     color: white;
     font-size: 100px;
     font-weight: 500;
