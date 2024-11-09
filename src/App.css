@@ -125,5 +125,11 @@ body {
     color: white;
     justify-content: center;
     align-items: center;
+    width: fit-content;
+}
+
+.buffer p,
+.buffer h2 {
     text-align: left;
+    width: 100%;
 }
