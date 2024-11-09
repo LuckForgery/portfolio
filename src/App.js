@@ -96,16 +96,16 @@ function App() {
         <a>Pro. Beyond</a>
       </div>
       <div className="buffer">
-        <a>
+        <p>
           <h2>Welcome to my SandBox Space!</h2>
-        </a>
-        <a>
+        </p>
+        <p>
           I keep in here my latest activities and polished solutions in hope to
           spark new ideas and cultivate my skills.
           <br />
           Ultimately all of this is just for fun, and I'm more than happy to
           collaborate for more!
-        </a>
+        </p>
       </div>
       <div className=""></div>
     </>
