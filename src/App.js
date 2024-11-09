@@ -64,12 +64,6 @@ function App() {
                 onClick={() => {
                   window.open("https://www.linkedin.com/in/darius-ic-boteand");
                 }}
-                onMouseDown={(e) => {
-                  e.target.style.backgroundColor = "#00466c";
-                }}
-                onMouseUp={(e) => {
-                  e.target.style.backgroundColor = "#0077b5";
-                }}
               >
                 {" "}
                 in
@@ -112,17 +106,7 @@ function App() {
           Ultimately all of this is just for fun, and I'm more than happy to
           collaborate for more!
         </p>
-        <div
-          id="cv"
-          onMouseDown={(e) => {
-            e.target.style.backgroundColor = "#00466c";
-          }}
-          onMouseUp={(e) => {
-            e.target.style.backgroundColor = "#0077b5";
-          }}
-        >
-          cv
-        </div>
+        <div id="cv">cv</div>
       </div>
       <div className=""></div>
     </>
