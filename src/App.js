@@ -97,11 +97,13 @@ function App() {
       </div>
       <div className="buffer">
         <h3>Welcome to my SandBox Space!</h3>
-        I keep in here my latest activities and polished solutions in hope to
-        spark new ideas and cultivate my skills.
-        <br />
-        Ultimately all of this is just for fun, and I'm more than happy to
-        collaborate for more!
+        <a>
+          I keep in here my latest activities and polished solutions in hope to
+          spark new ideas and cultivate my skills.
+          <br />
+          Ultimately all of this is just for fun, and I'm more than happy to
+          collaborate for more!
+        </a>
       </div>
       <div className=""></div>
     </>

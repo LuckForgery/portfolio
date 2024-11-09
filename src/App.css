@@ -117,14 +117,15 @@ body {
     font-weight: 500;
 }
 
-#buffer {
+.buffer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
 }
 
-#buffer a {
+.buffer h3,
+a {
     color: white;
     font-size: 100px;
     font-weight: 500;
