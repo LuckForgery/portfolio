@@ -118,11 +118,12 @@ body {
 }
 
 .buffer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
     text-align: left;
 }
