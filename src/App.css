@@ -119,6 +119,7 @@ body {
 
 .buffer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-left: auto;
@@ -127,7 +128,7 @@ body {
 
 .buffer p {
     display: flex;
-    color: wite;
+    color: white;
     align-items: center;
     z-index: 1;
 }
