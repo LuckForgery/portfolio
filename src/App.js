@@ -109,7 +109,7 @@ function App() {
         <div
           id="cv"
           onMouseDown={(e) => {
-            e.target.style.backgroundColor = "#1f45a4";
+            e.target.style.backgroundColor = "#00466c";
           }}
           onMouseUp={(e) => {
             e.target.style.backgroundColor = "#0077b5";
