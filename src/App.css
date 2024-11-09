@@ -118,14 +118,14 @@ body {
 }
 
 .buffer {
-    display: flex;
+    //display: flex;
     //justify-content: center;
     //align-items: center;
     margin: auto;
 }
 
 .buffer p {
-    color: red;
+    color: wite;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
