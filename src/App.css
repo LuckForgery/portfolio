@@ -124,15 +124,11 @@ body {
     margin: auto;
 }
 
-.buffer h3 a {
+.buffer {
     color: white;
-    font-size: 100px;
-    font-weight: 500;
     align-items: center;
-    align-self: flex-end;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15vh;
     display: flex;
     z-index: 1;
 }
