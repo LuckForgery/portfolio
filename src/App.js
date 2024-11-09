@@ -96,7 +96,9 @@ function App() {
         <a>Pro. Beyond</a>
       </div>
       <div className="buffer">
-        <h3>Welcome to my SandBox Space!</h3>
+        <a>
+          <h2>Welcome to my SandBox Space!</h2>
+        </a>
         <a>
           I keep in here my latest activities and polished solutions in hope to
           spark new ideas and cultivate my skills.

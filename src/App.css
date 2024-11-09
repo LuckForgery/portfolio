@@ -124,7 +124,7 @@ body {
     margin: auto;
 }
 
-.buffer {
+.buffer a {
     color: white;
     align-items: center;
     margin-left: auto;
