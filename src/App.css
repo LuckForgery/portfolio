@@ -118,6 +118,7 @@ body {
 }
 
 .buffer {
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -130,10 +131,7 @@ body {
 
 .buffer p,
 .buffer h2 {
+    margin: 0;
     text-align: left;
     width: 100%;
-}
-
-.buffer h2 {
-    margin-bottom: 0;
 }
