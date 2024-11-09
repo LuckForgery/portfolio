@@ -121,14 +121,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .buffer p {
     display: flex;
     color: wite;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     z-index: 1;
 }
