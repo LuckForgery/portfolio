@@ -125,10 +125,10 @@ body {
 }
 
 .buffer p {
-    color: white;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    color: red;
+    //align-items: center;
+    //margin-left: auto;
+    //margin-right: auto;
     display: flex;
     z-index: 1;
 }
