@@ -95,13 +95,10 @@ function App() {
         </div>
         <a>Pro. Beyond</a>
       </div>
-      <div ref={divRef} className="buffer">
+      <div className="buffer">
         <h3>Welcome to my SandBox Space!</h3>
         I keep in here my latest activities and polished solutions in hope to
         spark new ideas and cultivate my skills.
-        <br />
-        My products here displayed are not for sale and sourcecode is kept
-        private unless I decide otherwise upon request.
         <br />
         Ultimately all of this is just for fun, and I'm more than happy to
         collaborate for more!
