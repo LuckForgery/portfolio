@@ -121,12 +121,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    //align-items: center;
-}
-
-.buffer p {
-    color: white;
-    z-index: 1;
+    align-items: flex-start;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
 }
