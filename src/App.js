@@ -64,6 +64,12 @@ function App() {
                 onClick={() => {
                   window.open("https://www.linkedin.com/in/darius-ic-boteand");
                 }}
+                onMouseDown={(e) => {
+                  e.target.style.backgroundColor = "#00466c";
+                }}
+                onMouseUp={(e) => {
+                  e.target.style.backgroundColor = "#0077b5";
+                }}
               >
                 {" "}
                 in
