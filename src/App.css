@@ -39,7 +39,8 @@ body {
 .navBar .details #name {
     font-weight: 600;
 }
-.navBar .details #LinkedIn div {
+.navBar .details #LinkedIn div,
+.buffer button {
     width: 150px;
     height: 30px;
     text-align: center;
@@ -137,4 +138,8 @@ body {
 
 .buffer h2 {
     margin-bottom: 20px;
+}
+
+.buffer button {
+    margin-top: 30px;
 }
