@@ -48,7 +48,7 @@ function App() {
               <a href="#bufferTop">Home Section</a>
             </td>
             <td id="m2">
-              <a href="#">Experience</a>
+              <a href="buffer">Experience</a>
             </td>
             <td id="m3">
               <a href="#">Active Skills</a>
@@ -94,7 +94,7 @@ function App() {
         </div>
         <a>Pro. Beyond</a>
       </div>
-      <div className="buffer">
+      <div className="buffer" id="buffer">
         <p>
           <h2>Welcome to my SandBox Space!</h2>
         </p>
