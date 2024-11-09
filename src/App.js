@@ -44,7 +44,7 @@ function App() {
       <div className="navBar">
         <table>
           <tr className="menue">
-            <td id="m1" href="#">
+            <td id="m1" href="#bufferTop">
               <a>Home Section</a>
             </td>
             <td id="m2" href="#">
@@ -65,7 +65,6 @@ function App() {
                   window.open("https://www.linkedin.com/in/darius-ic-boteand");
                 }}
               >
-                {" "}
                 in
               </div>
             </td>
@@ -82,7 +81,7 @@ function App() {
         }}
         ref={profileImgRef}
       />
-      <div ref={divRef} className="bufferTop">
+      <div ref={divRef} className="bufferTop" id="bufferTop">
         <a>
           We shouldn't spend our lives dreaming success.
           <br />
