@@ -48,7 +48,7 @@ function App() {
               <a>Home Section</a>
             </td>
             <td id="m2" href="#">
-              <a>Education/Experience</a>
+              <a>Experience</a>
             </td>
             <td id="m3" href="#">
               <a>Active Skills</a>
@@ -84,12 +84,6 @@ function App() {
       />
       <div ref={divRef} className="bufferTop">
         <a>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           We shouldn't spend our lives dreaming success.
           <br />
           Let's make this happen, <span className="blue">together</span>.
@@ -100,6 +94,17 @@ function App() {
           <StarryCanvas className="canvas" />
         </div>
         <a>Pro. Beyond</a>
+      </div>
+      <div ref={divRef} className="buffer">
+        <h3>Welcome to my SandBox Space!</h3>
+        I keep in here my latest activities and polished solutions in hope to
+        spark new ideas and cultivate my skills.
+        <br />
+        My products here displayed are not for sale and sourcecode is kept
+        private unless I decide otherwise upon request.
+        <br />
+        Ultimately all of this is just for fun, and I'm more than happy to
+        collaborate for more!
       </div>
       <div className=""></div>
     </>
