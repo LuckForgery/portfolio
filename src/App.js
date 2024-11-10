@@ -126,7 +126,7 @@ function App() {
         </p>
         <p>
           I keep in here my latest activities and polished solutions in hope to
-          spark new ideas and cultivate my skills.
+          cultivate my skills and spark new ideas.
           <br />
           Ultimately all of this is just for fun, and I'm more than happy to
           collaborate for more!
