@@ -107,7 +107,9 @@ function App() {
           collaborate for more!
         </p>
         <div id="cv">
-          <a href={cv}>cv</a>
+          <a href={cv} download="DariusB.pdf">
+            cv
+          </a>
         </div>
       </div>
       <div className=""></div>
