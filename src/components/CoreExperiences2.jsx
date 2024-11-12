@@ -1,15 +1,11 @@
 import CoreExperience from "./CoreExperience.jsx";
 import { CORE_EXPERIENCE } from "./cv/data.js";
-
-import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Autoplay } from "swiper/modules";
+import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-SwiperCore.use([EffectCoverflow, Autoplay]);
-
-export default function CoreExperiences() {
+export default function CoreExperiences2() {
   return (
     <>
       <section className="title">
@@ -25,7 +21,6 @@ export default function CoreExperiences() {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
-          initialSlide={222}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -42,6 +37,11 @@ export default function CoreExperiences() {
           ))}
         </Swiper>
       </section>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
     </>
   );
 }

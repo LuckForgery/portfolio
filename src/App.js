@@ -13,7 +13,7 @@ function App() {
       <ProfileSlider />
       <MainBlock />
       <CVSection />
-      {/*<CoreExperiences />*/}
+      <CoreExperiences />
     </>
   );
 }
