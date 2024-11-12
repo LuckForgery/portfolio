@@ -13,7 +13,7 @@ export default function CoreExperiences() {
   return (
     <>
       <section className="title">
-        <h2>
+        <h2 id="experienceTitle">
           What experience
           <br />
           do I have?

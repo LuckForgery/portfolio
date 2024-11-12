@@ -174,8 +174,8 @@ a {
     width: 70%;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     justify-content: flex-start;
     align-items: center;
     font-size: 25px;
@@ -196,7 +196,7 @@ a {
 .collection .content {
     height: 50vh; /*28rem*/
     max-height: 500px;
-    width: 30vw; /*25rem*/
+    width: 30vh; /*25rem*/
     max-width: 300px;
     overflow: hidden;
     background-color: blue;
