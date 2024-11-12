@@ -1,11 +1,12 @@
-import cv from "./cv/DariusB.pdf";
+import cv from "./DariusB.pdf";
 
 export default function CVSection() {
   return (
     <div className="buffer" id="buffer">
-      <p>
-        <h2>Welcome to my SandBox Space!</h2>
-      </p>
+      <h2>
+        <section>Welcome to my SandBox Space!</section>
+      </h2>
+
       <p>
         I keep in here my latest activities and polished solutions in hope to
         cultivate my skills and spark new ideas.

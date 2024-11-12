@@ -20,11 +20,11 @@ export default function ProfileSlider() {
         ref={profileImgRef}
       />
       <div ref={divRef} className="bufferTop" id="bufferTop">
-        <a>
+        <section>
           We shouldn't spend our lives dreaming success.
           <br />
           Let's make this happen, <span className="blue">together</span>.
-        </a>
+        </section>
       </div>
     </>
   );

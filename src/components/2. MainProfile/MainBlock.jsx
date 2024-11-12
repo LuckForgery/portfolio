@@ -1,4 +1,4 @@
-import StarryCanvas from "./specialScripts/StarryCanvas.jsx";
+import StarryCanvas from "./StarryCanvas.jsx";
 
 export default function MainBlock() {
   return (

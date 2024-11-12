@@ -1,5 +1,5 @@
 import CoreExperience from "./CoreExperience.jsx";
-import { CORE_EXPERIENCE } from "./cv/data.js";
+import { CORE_EXPERIENCE } from "./data.js";
 
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,11 +26,12 @@ export default function CoreExperiences() {
           centeredSlides={true}
           slidesPerView="auto"
           initialSlide={222}
+          spaceBetween={22}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 150,
-            modifier: 2,
+            depth: 222,
+            modifier: 0.5,
             slideShadows: true,
           }}
           modules={[EffectCoverflow]}
