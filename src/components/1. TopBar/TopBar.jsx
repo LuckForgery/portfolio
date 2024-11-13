@@ -10,10 +10,10 @@ export default function TopBar() {
             <a href="#experienceTitle">Experience</a>
           </td>
           <td id="m3">
-            <a href="#">Active Skills</a>
+            <a href="#skillTitle">Active Skills</a>
           </td>
           <td id="m4">
-            <a href="#">My Solutions</a>
+            <a href="#solutionsTitle">My Solutions</a>
           </td>
         </tr>
         <tr className="details">

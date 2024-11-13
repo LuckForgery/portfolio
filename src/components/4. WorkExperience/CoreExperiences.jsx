@@ -12,37 +12,39 @@ SwiperCore.use([EffectCoverflow, Autoplay]);
 export default function CoreExperiences() {
   return (
     <>
-      <section className="title">
-        <h2 id="experienceTitle">
-          What experience
-          <br />
-          do I have?
-        </h2>
-      </section>
-      <section className="collection">
-        <Swiper
-          effect="coverflow"
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView="auto"
-          initialSlide={222}
-          spaceBetween={22}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 222,
-            modifier: 0.5,
-            slideShadows: true,
-          }}
-          modules={[EffectCoverflow]}
-        >
-          {CORE_EXPERIENCE.map((data) => (
-            <SwiperSlide className="content">
-              <CoreExperience key={data} {...data} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <div className="section">
+        <section className="title">
+          <h2 className="sectionTitle" id="experienceTitle">
+            What Experience
+            <br />
+            do I have?
+          </h2>
+        </section>
+        <section className="collection">
+          <Swiper
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView="auto"
+            initialSlide={222}
+            spaceBetween={22}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 222,
+              modifier: 0.5,
+              slideShadows: true,
+            }}
+            modules={[EffectCoverflow]}
+          >
+            {CORE_EXPERIENCE.map((data) => (
+              <SwiperSlide className="content">
+                <CoreExperience key={data} {...data} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </section>
+      </div>
     </>
   );
 }
