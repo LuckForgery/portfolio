@@ -138,7 +138,6 @@ a {
     justify-content: center;
     align-items: center;
     width: fit-content;
-    min-width: 500px;
     width: 70%;
     max-width: 800px;
     font-size: 14px;
@@ -171,7 +170,6 @@ a {
 
 .title {
     display: flex;
-    min-width: 500px;
     width: 70%;
     max-width: 800px;
     margin: 0 auto;
