@@ -29,7 +29,7 @@ export const CORE_EXPERIENCE = [
   },
   {
     image: i3,
-    title: "ServiceNow Developer",
+    title: "ServiceNow Developer I",
     institute: {
       name: "KA2 Limited",
       logo: l2,
@@ -39,7 +39,7 @@ export const CORE_EXPERIENCE = [
   },
   {
     image: i4,
-    title: "Software Engineer",
+    title: "Software Engineer I",
     institute: {
       name: "Arch Europe Insurance Services Limited",
       logo: l3,
