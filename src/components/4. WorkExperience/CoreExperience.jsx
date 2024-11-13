@@ -1,15 +1,11 @@
-export default function CoreExperience({ image }) {
+export default function CoreExperience({ image, title, institute, end }) {
   return (
     <>
-      <img src={image} alt={"pic"} />
-      <div className="text-content">
-        <h3>Photography</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-          accusamus ratione nesciunt atque, dolores vel culpa debitis officia
-          expedita unde?
-        </p>
-        <button className="btn">Read more</button>
+      <div className="innerContent">
+        <img src={image} alt={"pic"} id="cover" />
+        <h3>{title}</h3>
+        <img src={institute.logo} alt="" id="logo" />
+        <div className="status" id={end === "" ? "active" : "inacive"}></div>
       </div>
     </>
   );

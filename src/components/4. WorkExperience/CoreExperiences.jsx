@@ -38,7 +38,7 @@ export default function CoreExperiences() {
         >
           {CORE_EXPERIENCE.map((data) => (
             <SwiperSlide className="content">
-              <CoreExperience key={data.image} {...data} />
+              <CoreExperience key={data} {...data} />
             </SwiperSlide>
           ))}
         </Swiper>
