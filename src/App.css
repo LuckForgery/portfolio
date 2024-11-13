@@ -124,7 +124,7 @@ a {
 }
 
 .blue {
-    color: #0077b5;
+    color: #18acf5;
     font-weight: 500;
 }
 
@@ -227,11 +227,53 @@ a {
 
 .content #logo {
     position: absolute;
+    border-top-right-radius: 20px;
     bottom: 0;
     left: 0;
     height: 15%;
-    weight: 15%;
     z-index: 3;
+}
+
+#titleEnclosure {
+    border-top: 2px solid #18acf5;
+
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 10%;
+
+    padding-top: 1%;
+    padding-right: 3%;
+    justify-content: right;
+
+    background-color: #161616;
+    opacity: 90%;
+
+    font-size: 1.6vh;
+}
+
+#timeEnclosure {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 6%;
+
+    margin-right: 3%;
+    justify-content: right;
+
+    font-size: 2vh;
+    opacity: 90%;
+}
+
+#timeEnclosure section {
+    font-weight: 600;
+    opacity: 90%;
 }
 
 .content .status {

@@ -9,7 +9,7 @@ import i4 from "./arch.jpg";
 export const CORE_EXPERIENCE = [
   {
     image: i1,
-    title: "BSc Computer Science",
+    title: "BSc. Computer Science",
     institute: {
       name: "University of Kent",
       logo: l1,
@@ -19,7 +19,7 @@ export const CORE_EXPERIENCE = [
   },
   {
     image: i2,
-    title: "MSc Cyber Security",
+    title: "MSc. Cyber Security",
     institute: {
       name: "University of Kent",
       logo: l1,
@@ -29,7 +29,7 @@ export const CORE_EXPERIENCE = [
   },
   {
     image: i3,
-    title: "ServiceNow Developer (Junior)",
+    title: "ServiceNow Developer",
     institute: {
       name: "KA2 Limited",
       logo: l2,
@@ -39,7 +39,7 @@ export const CORE_EXPERIENCE = [
   },
   {
     image: i4,
-    title: "Software Engineer (Associate)",
+    title: "Software Engineer",
     institute: {
       name: "Arch Europe Insurance Services Limited",
       logo: l3,
