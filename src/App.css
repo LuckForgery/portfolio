@@ -28,6 +28,7 @@ a {
     margin-right: auto;
     margin-bottom: 6px;
     width: 70%;
+    min-width: 422px;
     max-width: 800px;
 }
 .navBar tr {
@@ -52,7 +53,7 @@ a {
     font-weight: 600;
 }
 .navBar .details #LinkedIn div {
-    width: 150px;
+    width: 166px;
     height: 30px;
     text-align: center;
     line-height: 0.9;
