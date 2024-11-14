@@ -4,16 +4,18 @@ export default function TopBar() {
       <table>
         <tr className="menue">
           <td id="m1">
-            <a href="#bufferTop">Home Section</a>
+            <a href="#home">Home Section</a>
           </td>
           <td id="m2">
-            <a href="#experienceTitle">Experience</a>
+            <a href="#experiences">Experience</a>
           </td>
           <td id="m3">
-            <a href="#skillTitle">Active Skills</a>
+            <a href="#skills" s>
+              Active Skills
+            </a>
           </td>
           <td id="m4">
-            <a href="#solutionsTitle">My Solutions</a>
+            <a href="#solutions">My Solutions</a>
           </td>
         </tr>
         <tr className="details">

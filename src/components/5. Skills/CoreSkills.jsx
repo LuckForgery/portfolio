@@ -3,7 +3,7 @@ export default function CoreSkills() {
     <>
       <div className="section">
         <section className="title">
-          <h2 className="sectionTitle" id="skillTitle">
+          <h2 className="sectionTitle" id="skills">
             What Skills
             <br />
             do I use?

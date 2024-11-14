@@ -14,7 +14,7 @@ export default function CoreExperiences() {
     <>
       <div className="section">
         <section className="title">
-          <h2 className="sectionTitle" id="experienceTitle">
+          <h2 className="sectionTitle" id="experiences">
             What Experience
             <br />
             do I have?

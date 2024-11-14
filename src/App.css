@@ -27,7 +27,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 6px;
-    min-width: 500px;
+    //min-width: 500px;
     width: 50%;
     max-width: 800px;
 }
@@ -42,6 +42,8 @@ a {
 }
 .navBar .menue a {
     cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .navBar .details {
     margin-top: 40px;

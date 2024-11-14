@@ -3,7 +3,7 @@ export default function Solutions() {
     <>
       <div className="section">
         <section className="title">
-          <h2 className="sectionTitle" id="solutionsTitle">
+          <h2 className="sectionTitle" id="solutions">
             What Solutions
             <br />
             did I bring?

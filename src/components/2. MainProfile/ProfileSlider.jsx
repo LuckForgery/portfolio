@@ -19,7 +19,7 @@ export default function ProfileSlider() {
         }}
         ref={profileImgRef}
       />
-      <div ref={divRef} className="bufferTop" id="bufferTop">
+      <div ref={divRef} className="bufferTop" id="home">
         <section>
           We shouldn't spend our lives dreaming success.
           <br />
