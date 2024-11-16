@@ -112,7 +112,7 @@ a {
     -webkit-mask-image: linear-gradient(to bottom, black 1%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
-.profile a {
+.profile section {
     color: white;
     font-size: 100px;
     font-weight: 500;

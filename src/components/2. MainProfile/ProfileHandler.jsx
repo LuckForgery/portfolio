@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const ProfileHandler = (divRef) => {
   const [imageSize, setImageSize] = useState(430);
