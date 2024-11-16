@@ -5,12 +5,11 @@ export default function MainBlock() {
   const [showCanvas, setShowCanvas] = useState(true);
 
   useEffect(() => {
-    // Check if the device is a smartphone using the user agent string
     const isSmartphone = /Mobi|Android/i.test(navigator.userAgent);
     const isSmallScreen = window.innerWidth <= 600;
 
     if (isSmartphone && isSmallScreen) {
-      setShowCanvas(false); // Hide canvas on smartphones
+      setShowCanvas(false);
     }
   }, []);
   return (
