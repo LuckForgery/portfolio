@@ -83,14 +83,14 @@ a {
 #profileStatic {
     position: absolute;
     border-radius: 400px;
-    height: 30vh;
-    transform: translate(-50%, -10%);
+    height: 35vh;
+    transform: translate(-50%, -5%);
     left: 50%;
     z-index: 2;
 }
 
 #sloganPhone {
-    font-size: 50px;
+    font-size: 70px;
     left: 50%;
     right: 50%;
 }
