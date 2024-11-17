@@ -149,6 +149,18 @@ a {
     display: flex;
     z-index: 1;
 }
+.profileStatic {
+    color: white;
+    font-size: 100px;
+    font-weight: 500;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    display: flex;
+    z-index: 1;
+}
 
 .blue {
     color: #18acf5;
