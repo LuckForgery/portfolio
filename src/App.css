@@ -149,7 +149,7 @@ a {
     display: flex;
     z-index: 1;
 }
-.profileStatic {
+.profileStatic section {
     color: white;
     font-size: 100px;
     font-weight: 500;
@@ -157,7 +157,7 @@ a {
     align-self: flex-end;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -150px;
+    margin-bottom: 10px;
     display: flex;
     z-index: 1;
 }
