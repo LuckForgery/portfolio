@@ -119,6 +119,15 @@ a {
     position: relative;
     z-index: 1;
 }
+.profileStatic {
+    background: black;
+    height: 75vh;
+    max-height: 300px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
 .profile .stars {
     position: absolute;
     align-items: center;

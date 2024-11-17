@@ -16,7 +16,7 @@ export default function MainBlock() {
   return (
     <>
       {!showCanvas && <img src={logo} id="profileStatic" alt="profile" />}
-      <div className="profile" style={showCanvas ? undefined : "height: 500px"}>
+      <div className={showCanvas ? "profile" : "profileStatic"}>
         <div className="stars">
           {showCanvas && <StarryCanvas className="canvas" />}
         </div>
