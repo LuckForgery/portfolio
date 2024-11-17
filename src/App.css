@@ -89,6 +89,12 @@ a {
     z-index: 2;
 }
 
+#sloganPhone {
+    font-size: 50px;
+    left: 50%;
+    right: 50%;
+}
+
 .bufferTop {
     min-height: 200px;
     height: 220px;

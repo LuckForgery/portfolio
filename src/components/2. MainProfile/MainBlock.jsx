@@ -20,7 +20,8 @@ export default function MainBlock() {
         <div className="stars">
           {showCanvas && <StarryCanvas className="canvas" />}
         </div>
-        <section>Pro. Beyond</section>
+        {!showCanvas && <section id="sloganPhone">Pro. Beyond</section>}
+        {showCanvas && <section>Pro. Beyond</section>}
       </div>
     </>
   );
