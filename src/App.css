@@ -93,6 +93,7 @@ a {
     font-size: 70px;
     left: 50%;
     right: 50%;
+    transfrom: translateY(-50px);
 }
 
 .bufferTop {
