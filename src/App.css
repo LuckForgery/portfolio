@@ -81,17 +81,9 @@ a {
 }
 
 #profileStatic {
-    top: 50px;
-    left: 0;
-    right: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
     border-radius: 400px;
-    max-height: 30vh;
-    min-height: 10px;
-    z-index: 1;
+    height: 30vh;
 }
 
 .bufferTop {
