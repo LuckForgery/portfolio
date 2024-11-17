@@ -81,10 +81,12 @@ a {
 }
 
 #profileStatic {
-    position: fixed;
-    display: flex;
+    position: absolute;
     border-radius: 400px;
     height: 30vh;
+    transform: translate(-50%, -10%);
+    left: 50%;
+    z-index: 2;
 }
 
 .bufferTop {
