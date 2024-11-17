@@ -81,6 +81,7 @@ a {
 }
 
 #profileStatic {
+    position: fixed;
     display: flex;
     border-radius: 400px;
     height: 30vh;

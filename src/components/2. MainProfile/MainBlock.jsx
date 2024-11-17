@@ -14,12 +14,14 @@ export default function MainBlock() {
     }
   }, []);
   return (
-    <div className="profile">
-      <div className="stars">
-        {showCanvas && <StarryCanvas className="canvas" />}
-      </div>
+    <>
       {!showCanvas && <img src={logo} id="profileStatic" alt="profile" />}
-      <section>Pro. Beyond</section>
-    </div>
+      <div className="profile">
+        <div className="stars">
+          {showCanvas && <StarryCanvas className="canvas" />}
+        </div>
+        <section>Pro. Beyond</section>
+      </div>
+    </>
   );
 }
