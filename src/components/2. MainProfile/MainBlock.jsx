@@ -17,6 +17,7 @@ export default function MainBlock() {
       <div className="stars">
         {showCanvas && <StarryCanvas className="canvas" />}
       </div>
+
       <section>Pro. Beyond</section>
     </div>
   );
