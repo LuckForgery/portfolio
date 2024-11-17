@@ -80,6 +80,20 @@ a {
     z-index: 6;
 }
 
+#profileStatic {
+    top: 200px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 400px;
+    max-height: 30vh;
+    min-height: 10px;
+    z-index: 1;
+}
+
 .bufferTop {
     min-height: 200px;
     height: 220px;

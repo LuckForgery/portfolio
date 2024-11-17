@@ -18,16 +18,7 @@ export default function MainBlock() {
       <div className="stars">
         {showCanvas && <StarryCanvas className="canvas" />}
       </div>
-      {!showCanvas && (
-        <img
-          src={logo}
-          id="profile"
-          alt="profile"
-          style={{
-            height: `2vh`,
-          }}
-        />
-      )}
+      {!showCanvas && <img src={logo} id="profileStatic" alt="profile" />}
       <section>Pro. Beyond</section>
     </div>
   );
