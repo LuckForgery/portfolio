@@ -1,10 +1,13 @@
 import React, { useRef, useEffect } from "react";
 
-function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
+function CircularMenu() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight / 2.5; //set canvas to full size of the window
+
     const ctx = canvas.getContext("2d"); //get the canvas from html
 
     var colors = [
@@ -34,12 +37,9 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
       HORIZONTAL = 5,
       VERTICAL = 4, //how many circles will be on the canvas
       RADIUS = 40, //size of circles
-      PADDINGX = 10,
-      PADDINGY = 10, //the gap between circles
-      SCALE_FACTOR = 300; //small number = icons get small faster, smaller number = icons get small slowly
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight / 2; //set canvas to full size of the window
+      PADDINGX = 0,
+      PADDINGY = 0, //the gap between circles
+      SCALE_FACTOR = 200; //small number = icons get small faster, smaller number = icons get small slowly
 
     offsetX =
       (canvas.width -
@@ -75,7 +75,7 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
         x += RADIUS * 2 + PADDINGX; //increase x for the next circle
       }
 
-      if (i % 2 == 0) {
+      if (i % 2 === 0) {
         x = PADDINGX / 2 + RADIUS; //if its the second, fourth, sixth etc. row then move the row to right
       } else {
         x = 0;
@@ -83,15 +83,6 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
 
       y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
     }
-
-    const loadImage = (src) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.onerror = (err) => reject(err);
-        img.src = src;
-      });
-    };
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
@@ -144,10 +135,12 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
     }
 
     function handleSwipe(e) {
+      //disable page scroll
       mouseX = e.changedTouches[0].clientX;
       mouseY = e.changedTouches[0].clientY;
       offsetX = oldOffsetX + mouseX - startX;
       offsetY = oldOffsetY + mouseY - startY;
+      //re-enable page scroll
     }
 
     window.addEventListener("touchend", () => {
@@ -180,7 +173,7 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
     }
 
     window.addEventListener("resize", () => {
-      canvas.height = window.innerHeight / 2;
+      canvas.height = window.innerHeight / 2.5;
       canvas.width = window.innerWidth;
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
@@ -190,7 +183,7 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
       // Cleanup function to stop animation and prevent memory leaks
       window.cancelAnimationFrame(draw);
     };
-  }, [canvasRef, colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR]);
+  }, [canvasRef]);
 
   return <canvas ref={canvasRef} />;
 }
