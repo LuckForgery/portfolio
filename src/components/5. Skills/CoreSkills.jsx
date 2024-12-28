@@ -1,3 +1,5 @@
+import SkillBoard from "./SkillBoard.jsx";
+
 export default function CoreSkills() {
   return (
     <>
@@ -9,6 +11,7 @@ export default function CoreSkills() {
             do I use?
           </h2>
         </section>
+        <SkillBoard />
       </div>
     </>
   );

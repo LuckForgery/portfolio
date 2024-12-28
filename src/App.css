@@ -330,3 +330,19 @@ a {
 .content #inacive {
     background-color: orangered;
 }
+
+#dynamicTable {
+    width: auto;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+#dynamicTable th,
+#dynamicTable td {
+    border: 0px solid black;
+    padding: 8px;
+    text-align: center;
+    min-width: 30px;
+}
+#dynamicTable tr {
+    display: table-row;
+}
