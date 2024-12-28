@@ -94,7 +94,7 @@ function CircularMenu({ colors, RADIUS, PADDINGX, PADDINGY, SCALE_FACTOR }) {
     };
 
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height / 2); //clear the canvas
 
       ctx.save();
 
