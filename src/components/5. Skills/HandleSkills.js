@@ -30,12 +30,15 @@ function HandleSkills() {
             img.style.maxHeight = "30px";
             cell.appendChild(img);
           }
+          cell.style.justifyContent = "center";
           cell.style.marginLeft = "5%";
           cell.style.marginRight = "5%";
           cell.style.marginTop = "-5px";
           cell.style.marginBottom = "-5px";
           cell.style.backgroundColor = "GREY";
-          cell.style.borderRadius = "50px";
+          cell.style.borderRadius = "100px";
+          cell.style.minWidth = "30px";
+          cell.style.maxHeight = "30px";
           wrapper.appendChild(cell);
           skillIndex++;
         }
