@@ -57,57 +57,57 @@ export const CORE_SKILLS = [
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
   {
     image: s0,
-    title: "",
+    title: "test",
     project: [],
   },
 ];
