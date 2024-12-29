@@ -38,7 +38,7 @@ function CircularMenu() {
       HORIZONTAL = 6,
       VERTICAL = 5,
       RADIUS = 50,
-      PADDINGX = -10,
+      PADDINGX = -5,
       PADDINGY = -20,
       SCALE_FACTOR = 300;
     offsetX =
@@ -69,20 +69,24 @@ function CircularMenu() {
             (VERTICAL % 2 !== 0 && j === 0 && i === VERTICAL - 1)
           )
         ) {
-          circles.push({
-            x: x,
-            y: y,
-            color: colors[Math.round(Math.random() * (colors.length - 1))],
-          });
-          if (VERTICAL % 2 !== 0 && VERTICAL / 2) {
-          }
+          addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
         }
         /* ---- CONTROL for smartphone HERE (remove the line for smartphone screen) ---- */
         x += RADIUS * 2 + PADDINGX; //increase x for the next circle
       }
-
+      if (i === 2) {
+        addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
+      }
       x = i % 2 === 0 ? PADDINGX / 2 + RADIUS : 0;
       y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
+    }
+
+    function addCircle(colour) {
+      circles.push({
+        x: x,
+        y: y,
+        color: colour,
+      });
     }
 
     function draw() {
