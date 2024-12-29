@@ -5,18 +5,17 @@ function CircularMenu() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight / 2.5; //set canvas to full size of the window
-
+    canvas.width = window.innerWidth / 2;
+    canvas.height = window.innerHeight / 2; //set canvas to full size of the window
+    canvas.style = "display:flex;margin: 0 auto";
     const ctx = canvas.getContext("2d"); //get the canvas from html
-
     var colors = [
-        "#FF9AA2",
-        "#FFB7B2",
-        "#FFDAC1",
-        "#E2F0CB",
-        "#B5EAD7",
-        "#C7CEEA",
+        "#18acf5",
+        "#18a555",
+        "#ff871c",
+        "#ffffff",
+        "#ff0000",
+        "#de24a8",
       ],
       mouseX = 0,
       mouseY = 0, //save current mouse/finger position
@@ -34,13 +33,12 @@ function CircularMenu() {
       j, //used for counters
       x,
       y, //used for creating the array of circles
-      HORIZONTAL = 5,
+      HORIZONTAL = 6,
       VERTICAL = 4, //how many circles will be on the canvas
       RADIUS = 40, //size of circles
-      PADDINGX = 0,
-      PADDINGY = 0, //the gap between circles
-      SCALE_FACTOR = 200; //small number = icons get small faster, smaller number = icons get small slowly
-
+      PADDINGX = 20,
+      PADDINGY = 20, //the gap between circles
+      SCALE_FACTOR = 300; //small number = icons get small faster, smaller number = icons get small slowly
     offsetX =
       (canvas.width -
         (RADIUS * 2 * HORIZONTAL +
@@ -53,10 +51,8 @@ function CircularMenu() {
       (canvas.height - (RADIUS * 2 * VERTICAL + PADDINGY * (VERTICAL - 1))) /
         2 +
       RADIUS;
-
     centerX = canvas.width / 2;
     centerY = canvas.height / 2;
-
     x = 0;
     y = 0;
 
@@ -111,20 +107,29 @@ function CircularMenu() {
       requestAnimationFrame(draw);
     }
 
-    draw();
-
     function getDistance(circle) {
-      var dx, dy, dist;
+      var dx, dy, dist, distX, distY;
       dx = circle.x - centerX + offsetX;
       dy = circle.y - centerY + offsetY;
-      dist = Math.sqrt(dx * dx + dy * dy);
+      // Calculate separate distances for horizontal and vertical axis
+      //distX = Math.abs(dx);
+      //distY = Math.abs(dy);
+      const maxDistX = canvas.width / 2 - RADIUS - PADDINGX / 2;
+      const maxDistY = canvas.height / 2 - RADIUS - PADDINGY / 2;
+
+      distX = Math.min(Math.abs(dx), maxDistX);
+      distY = Math.min(Math.abs(dy), maxDistY);
+      // Adjust the scaling based on a factor for the vertical axis
+      const verticalScalingFactor = 1.7; // Adjust this value to control the oval shape
+      // Combine distances with a weighted average considering vertical scaling
+      dist = Math.sqrt(
+        Math.pow(distX, 2) + Math.pow(distY * verticalScalingFactor, 2),
+      );
       scale = 1 - dist / SCALE_FACTOR;
       scale = scale > 0 ? scale : 0;
 
       return scale;
     }
-
-    window.addEventListener("touchstart", handleTouch);
 
     function handleTouch(e) {
       window.addEventListener("touchmove", handleSwipe);
@@ -142,12 +147,6 @@ function CircularMenu() {
       offsetY = oldOffsetY + mouseY - startY;
       //re-enable page scroll
     }
-
-    window.addEventListener("touchend", () => {
-      window.removeEventListener("touchmove", handleSwipe);
-    });
-
-    window.addEventListener("mousedown", handleClick);
 
     function handleClick(e) {
       window.addEventListener("mousemove", handleMouse);
@@ -172,9 +171,16 @@ function CircularMenu() {
       canvas.style.cursor = "grab";
     }
 
+    draw();
+
+    window.addEventListener("touchstart", handleTouch);
+    window.addEventListener("mousedown", handleClick);
+    window.addEventListener("touchend", () => {
+      window.removeEventListener("touchmove", handleSwipe);
+    });
     window.addEventListener("resize", () => {
-      canvas.height = window.innerHeight / 2.5;
-      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight / 2;
+      canvas.width = window.innerWidth / 2;
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
     });
