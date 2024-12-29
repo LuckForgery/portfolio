@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.741af57a.css",
-    "main.js": "/portfolio/static/js/main.75c9f184.js",
+    "main.js": "/portfolio/static/js/main.d05aa55f.js",
     "static/js/453.6c52862d.chunk.js": "/portfolio/static/js/453.6c52862d.chunk.js",
     "static/media/ka2.jpg": "/portfolio/static/media/ka2.de0a5360af800ef78b6a.jpg",
     "static/media/msc.jpg": "/portfolio/static/media/msc.03df1f2d15bfa3a4d910.jpg",
@@ -13,15 +13,18 @@
     "static/media/skill_7.png": "/portfolio/static/media/skill_7.13956f8ab7739a3cb4d7.png",
     "static/media/arch.jpg": "/portfolio/static/media/arch.9c81e1a4f4b18e9f0bc8.jpg",
     "static/media/skill_2.png": "/portfolio/static/media/skill_2.0020bb3ec81eb946f486.png",
+    "static/media/skill_18.png": "/portfolio/static/media/skill_18.14cc5f01b6c4e73cc9cc.png",
+    "static/media/skill_19.png": "/portfolio/static/media/skill_19.a146290b1a5c2960aaba.png",
     "static/media/skill_8.png": "/portfolio/static/media/skill_8.51dbe6827f05b6f1e319.png",
+    "static/media/skill_13.png": "/portfolio/static/media/skill_13.f58fc4c5c3761f473e01.png",
     "static/media/skill_5.png": "/portfolio/static/media/skill_5.c038d6e950c57ddc3d03.png",
     "index.html": "/portfolio/index.html",
     "main.741af57a.css.map": "/portfolio/static/css/main.741af57a.css.map",
-    "main.75c9f184.js.map": "/portfolio/static/js/main.75c9f184.js.map",
+    "main.d05aa55f.js.map": "/portfolio/static/js/main.d05aa55f.js.map",
     "453.6c52862d.chunk.js.map": "/portfolio/static/js/453.6c52862d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.741af57a.css",
-    "static/js/main.75c9f184.js"
+    "static/js/main.d05aa55f.js"
   ]
 }
