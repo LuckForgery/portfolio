@@ -5,9 +5,10 @@ function CircularMenu() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = window.innerWidth / 2;
+    if (!canvas) return;
+
+    canvas.width = window.innerWidth / 1.5;
     canvas.height = window.innerHeight / 2; //set canvas to full size of the window
-    canvas.style = "display:flex;margin: 0 auto";
     const ctx = canvas.getContext("2d"); //get the canvas from html
     var colors = [
         "#7cb2e1",
@@ -52,7 +53,37 @@ function CircularMenu() {
       x = 0,
       y = 0; //used for creating the array of circles
 
-    function initBoard() {
+    //-------------------------------------------------------------------------------------------\\
+    const images = {};
+    //-------------------------------------------------------------------------------------------//
+
+    //-------------------------------------------------------------------------------------------\\
+    function loadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    }
+    //-------------------------------------------------------------------------------------------//
+
+    async function initBoard() {
+      //-------------------------------------------------------------------------------------------\\
+      const imagePromises = [];
+      for (let k = 0; k < 100; k++) {
+        imagePromises.push(
+          loadImage(`https://picsum.photos/50/50?random=${k}`),
+        );
+      }
+      const loadedImages = await Promise.all(imagePromises);
+
+      for (let k = 0; k < loadedImages.length; k++) {
+        images[`image${k}`] = loadedImages[k];
+      }
+
+      let imageIndex = 0;
+      //-------------------------------------------------------------------------------------------//
       for (i = 0; i < VERTICAL; i++) {
         for (j = 0; j < HORIZONTAL; j++) {
           if (
@@ -64,24 +95,45 @@ function CircularMenu() {
               (VERTICAL % 2 !== 0 && j === 0 && i === VERTICAL - 1)
             )
           ) {
-            addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
+            addCircle(
+              colors[Math.round(Math.random() * (colors.length - 1))],
+              //-------------------------------------------------------------------------------------------\\
+              images[`image${imageIndex % 100}`],
+              //-------------------------------------------------------------------------------------------//
+            );
+            //-------------------------------------------------------------------------------------------\\
+            imageIndex++;
+            //-------------------------------------------------------------------------------------------//
           }
           /* ---- CONTROL for smartphone HERE (remove the line for smartphone screen) ---- */
           x += RADIUS * 2 + PADDINGX; //increase x for the next circle
         }
         if (i === 2) {
-          addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
+          addCircle(
+            colors[Math.round(Math.random() * (colors.length - 1))],
+            //-------------------------------------------------------------------------------------------\\
+            images[`image${imageIndex % 3}`],
+            //-------------------------------------------------------------------------------------------//
+          );
+          //-------------------------------------------------------------------------------------------\\
+          imageIndex++;
+          //-------------------------------------------------------------------------------------------//
         }
         x = i % 2 === 0 ? PADDINGX / 2 + RADIUS : 0;
         y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
       }
     }
 
-    function addCircle(colour) {
+    //-------------------------------------------------------------------------------------------\\
+    function addCircle(colour, image) {
+      //-------------------------------------------------------------------------------------------//
       circles.push({
         x: x,
         y: y,
         color: colour,
+        //-------------------------------------------------------------------------------------------\\
+        image: image,
+        //-------------------------------------------------------------------------------------------//
       });
     }
 
@@ -100,6 +152,18 @@ function CircularMenu() {
         ctx.beginPath();
         ctx.arc(0, 0, RADIUS, 0, Math.PI * 2);
         ctx.fill();
+        //-------------------------------------------------------------------------------------------\\
+        if (circles[i].image) {
+          const imageSize = RADIUS * 1.5; // Adjust image size as needed
+          ctx.drawImage(
+            circles[i].image,
+            -imageSize / 2, // Center horizontally
+            -imageSize / 2, // Center vertically
+            imageSize,
+            imageSize,
+          );
+        }
+        //-------------------------------------------------------------------------------------------//
         ctx.restore();
       }
 
@@ -185,7 +249,12 @@ function CircularMenu() {
     };
   }, [canvasRef]);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{ display: "flex", margin: "0 auto", cursor: "grab" }}
+    />
+  );
 }
 
 export default CircularMenu;
