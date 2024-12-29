@@ -10,12 +10,14 @@ function CircularMenu() {
     canvas.style = "display:flex;margin: 0 auto";
     const ctx = canvas.getContext("2d"); //get the canvas from html
     var colors = [
-        "#18acf5",
-        "#18a555",
-        "#ff871c",
-        "#ffffff",
-        "#ff0000",
-        "#de24a8",
+        "#7cb2e1",
+        "#87c7fb",
+        "#628fb5",
+        "#48848f",
+        "#69c1d1",
+        "#7ee8fc",
+        "#6ebbff",
+        "#5a98d0",
       ],
       mouseX = 0,
       mouseY = 0, //save current mouse/finger position
@@ -34,11 +36,11 @@ function CircularMenu() {
       x,
       y, //used for creating the array of circles
       HORIZONTAL = 6,
-      VERTICAL = 4, //how many circles will be on the canvas
-      RADIUS = 40, //size of circles
-      PADDINGX = 20,
-      PADDINGY = 20, //the gap between circles
-      SCALE_FACTOR = 300; //small number = icons get small faster, smaller number = icons get small slowly
+      VERTICAL = 5,
+      RADIUS = 50,
+      PADDINGX = -10,
+      PADDINGY = -20,
+      SCALE_FACTOR = 300;
     offsetX =
       (canvas.width -
         (RADIUS * 2 * HORIZONTAL +
@@ -58,44 +60,42 @@ function CircularMenu() {
 
     for (i = 0; i < VERTICAL; i++) {
       for (j = 0; j < HORIZONTAL; j++) {
-        var randomColor =
-          colors[Math.round(Math.random() * (colors.length - 1))]; //generating a random color for the menu circle
-        var imgLink =
-          "https://www.freepik.com/free-photo/handshake-icon-concept-partnership-agreement_35037994.htm#fromView=keyword&page=1&position=7&uuid=ade2bde6-a193-4ed2-83e6-d8dd546d6a39";
-        circles.push({
-          x: x,
-          y: y,
-          color: randomColor,
-          image: imgLink,
-        }); //add circle with x and y coordinates and color to the array
+        if (
+          !(
+            (j === 0 && i === 0) ||
+            (VERTICAL % 2 === 0 &&
+              j === HORIZONTAL - 1 &&
+              i === VERTICAL - 1) ||
+            (VERTICAL % 2 !== 0 && j === 0 && i === VERTICAL - 1)
+          )
+        ) {
+          circles.push({
+            x: x,
+            y: y,
+            color: colors[Math.round(Math.random() * (colors.length - 1))],
+          });
+          if (VERTICAL % 2 !== 0 && VERTICAL / 2) {
+          }
+        }
+        /* ---- CONTROL for smartphone HERE (remove the line for smartphone screen) ---- */
         x += RADIUS * 2 + PADDINGX; //increase x for the next circle
       }
 
-      if (i % 2 === 0) {
-        x = PADDINGX / 2 + RADIUS; //if its the second, fourth, sixth etc. row then move the row to right
-      } else {
-        x = 0;
-      }
-
+      x = i % 2 === 0 ? PADDINGX / 2 + RADIUS : 0;
       y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
     }
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
-
       ctx.save();
 
       ctx.translate(offsetX, offsetY);
 
       for (i = 0; i < circles.length; i++) {
-        ctx.save();
-
         scale = getDistance(circles[i]);
+        ctx.save();
         ctx.translate(circles[i].x, circles[i].y);
-        ctx.translate(RADIUS / 2, RADIUS / 2);
         ctx.scale(scale, scale);
-        ctx.translate(-RADIUS / 2, -RADIUS / 2);
-
         ctx.fillStyle = circles[i].color;
         ctx.beginPath();
         ctx.arc(0, 0, RADIUS, 0, Math.PI * 2);
@@ -108,31 +108,24 @@ function CircularMenu() {
     }
 
     function getDistance(circle) {
-      var dx, dy, dist, distX, distY;
-      dx = circle.x - centerX + offsetX;
-      dy = circle.y - centerY + offsetY;
-      // Calculate separate distances for horizontal and vertical axis
-      //distX = Math.abs(dx);
-      //distY = Math.abs(dy);
-      const maxDistX = canvas.width / 2 - RADIUS - PADDINGX / 2;
-      const maxDistY = canvas.height / 2 - RADIUS - PADDINGY / 2;
+      const verticalScalingFactor = 1.7,
+        maxDistX = canvas.width / 2 - RADIUS - PADDINGX / 2,
+        maxDistY = canvas.height / 2 - RADIUS - PADDINGY / 2;
 
-      distX = Math.min(Math.abs(dx), maxDistX);
-      distY = Math.min(Math.abs(dy), maxDistY);
-      // Adjust the scaling based on a factor for the vertical axis
-      const verticalScalingFactor = 1.7; // Adjust this value to control the oval shape
-      // Combine distances with a weighted average considering vertical scaling
-      dist = Math.sqrt(
-        Math.pow(distX, 2) + Math.pow(distY * verticalScalingFactor, 2),
-      );
-      scale = 1 - dist / SCALE_FACTOR;
-      scale = scale > 0 ? scale : 0;
+      var dx = circle.x - centerX + offsetX,
+        dy = circle.y - centerY + offsetY,
+        distX = Math.min(Math.abs(dx), maxDistX),
+        distY = Math.min(Math.abs(dy), maxDistY),
+        dist = Math.sqrt(
+          Math.pow(distX, 2) + Math.pow(distY * verticalScalingFactor, 2),
+        ),
+        scale = 1 - dist / SCALE_FACTOR;
 
-      return scale;
+      return scale > 0 ? scale : 0;
     }
 
     function handleTouch(e) {
-      window.addEventListener("touchmove", handleSwipe);
+      //window.addEventListener("touchmove", handleSwipe);
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       oldOffsetX = offsetX;
