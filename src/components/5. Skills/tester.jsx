@@ -19,66 +19,62 @@ function CircularMenu() {
         "#6ebbff",
         "#5a98d0",
       ],
-      mouseX = 0,
-      mouseY = 0, //save current mouse/finger position
-      circles = [], //array of menu items
-      centerX,
-      centerY, //saves the center position of canvas
-      startX,
-      startY, //saves position of mouse/finger where draging/swiping starts
-      offsetX,
-      offsetY, //offset to center the menu items and move them around, gets in/decreased by dragging
-      oldOffsetX,
-      oldOffsetY, //save old offsets to update current offset
-      scale,
-      i,
-      j, //used for counters
-      x,
-      y, //used for creating the array of circles
       HORIZONTAL = 6,
       VERTICAL = 5,
       RADIUS = 50,
       PADDINGX = -5,
       PADDINGY = -20,
-      SCALE_FACTOR = 300;
-    offsetX =
-      (canvas.width -
-        (RADIUS * 2 * HORIZONTAL +
-          PADDINGX * (HORIZONTAL - 1) +
-          RADIUS +
-          PADDINGX / 2)) /
-        2 +
-      RADIUS; //center the circles by getting its width and calculating the leftover space
-    offsetY =
-      (canvas.height - (RADIUS * 2 * VERTICAL + PADDINGY * (VERTICAL - 1))) /
-        2 +
-      RADIUS;
-    centerX = canvas.width / 2;
-    centerY = canvas.height / 2;
-    x = 0;
-    y = 0;
+      SCALE_FACTOR = 300,
+      mouseX = 0,
+      mouseY = 0, //save current mouse/finger position
+      circles = [], //array of menu items
+      centerX = canvas.width / 2,
+      centerY = canvas.height / 2, //saves the center position of canvas
+      startX,
+      startY, //saves position of mouse/finger where draging/swiping starts
+      offsetX =
+        (canvas.width -
+          (RADIUS * 2 * HORIZONTAL +
+            PADDINGX * (HORIZONTAL - 1) +
+            RADIUS +
+            PADDINGX / 2)) /
+          2 +
+        RADIUS,
+      offsetY =
+        (canvas.height - (RADIUS * 2 * VERTICAL + PADDINGY * (VERTICAL - 1))) /
+          2 +
+        RADIUS, //offset to center the menu items and move them around, gets in/decreased by dragging
+      oldOffsetX,
+      oldOffsetY, //save old offsets to update current offset
+      scale,
+      i,
+      j, //used for counters
+      x = 0,
+      y = 0; //used for creating the array of circles
 
-    for (i = 0; i < VERTICAL; i++) {
-      for (j = 0; j < HORIZONTAL; j++) {
-        if (
-          !(
-            (j === 0 && i === 0) ||
-            (VERTICAL % 2 === 0 &&
-              j === HORIZONTAL - 1 &&
-              i === VERTICAL - 1) ||
-            (VERTICAL % 2 !== 0 && j === 0 && i === VERTICAL - 1)
-          )
-        ) {
+    function initBoard() {
+      for (i = 0; i < VERTICAL; i++) {
+        for (j = 0; j < HORIZONTAL; j++) {
+          if (
+            !(
+              (j === 0 && i === 0) ||
+              (VERTICAL % 2 === 0 &&
+                j === HORIZONTAL - 1 &&
+                i === VERTICAL - 1) ||
+              (VERTICAL % 2 !== 0 && j === 0 && i === VERTICAL - 1)
+            )
+          ) {
+            addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
+          }
+          /* ---- CONTROL for smartphone HERE (remove the line for smartphone screen) ---- */
+          x += RADIUS * 2 + PADDINGX; //increase x for the next circle
+        }
+        if (i === 2) {
           addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
         }
-        /* ---- CONTROL for smartphone HERE (remove the line for smartphone screen) ---- */
-        x += RADIUS * 2 + PADDINGX; //increase x for the next circle
+        x = i % 2 === 0 ? PADDINGX / 2 + RADIUS : 0;
+        y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
       }
-      if (i === 2) {
-        addCircle(colors[Math.round(Math.random() * (colors.length - 1))]);
-      }
-      x = i % 2 === 0 ? PADDINGX / 2 + RADIUS : 0;
-      y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
     }
 
     function addCircle(colour) {
@@ -168,8 +164,6 @@ function CircularMenu() {
       canvas.style.cursor = "grab";
     }
 
-    draw();
-
     window.addEventListener("touchstart", handleTouch);
     window.addEventListener("mousedown", handleClick);
     window.addEventListener("touchend", () => {
@@ -181,6 +175,9 @@ function CircularMenu() {
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
     });
+
+    initBoard();
+    draw();
 
     return () => {
       // Cleanup function to stop animation and prevent memory leaks
