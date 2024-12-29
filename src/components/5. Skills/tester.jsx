@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { CORE_SKILLS } from "./skills.js";
 
 function CircularMenu() {
   const canvasRef = useRef(null);
@@ -7,20 +8,10 @@ function CircularMenu() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    canvas.width = window.innerWidth / 1.5;
+    canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 2; //set canvas to full size of the window
     const ctx = canvas.getContext("2d"); //get the canvas from html
-    var colors = [
-        "#7cb2e1",
-        "#87c7fb",
-        "#628fb5",
-        "#48848f",
-        "#69c1d1",
-        "#7ee8fc",
-        "#6ebbff",
-        "#5a98d0",
-      ],
-      HORIZONTAL = 6,
+    var HORIZONTAL = 6,
       VERTICAL = 5,
       RADIUS = 50,
       PADDINGX = -5,
@@ -53,37 +44,12 @@ function CircularMenu() {
       x = 0,
       y = 0; //used for creating the array of circles
 
-    //-------------------------------------------------------------------------------------------\\
-    const images = {};
-    //-------------------------------------------------------------------------------------------//
-
-    //-------------------------------------------------------------------------------------------\\
-    function loadImage(src) {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.onerror = reject;
-        img.src = src;
-      });
-    }
-    //-------------------------------------------------------------------------------------------//
-
     async function initBoard() {
-      //-------------------------------------------------------------------------------------------\\
-      const imagePromises = [];
-      for (let k = 0; k < 100; k++) {
-        imagePromises.push(
-          loadImage(`https://picsum.photos/50/50?random=${k}`),
-        );
-      }
-      const loadedImages = await Promise.all(imagePromises);
-
-      for (let k = 0; k < loadedImages.length; k++) {
-        images[`image${k}`] = loadedImages[k];
-      }
+      const loadedImages = await Promise.all(
+        CORE_SKILLS.map((skill) => loadImage(skill)),
+      );
 
       let imageIndex = 0;
-      //-------------------------------------------------------------------------------------------//
       for (i = 0; i < VERTICAL; i++) {
         for (j = 0; j < HORIZONTAL; j++) {
           if (
@@ -96,44 +62,40 @@ function CircularMenu() {
             )
           ) {
             addCircle(
-              colors[Math.round(Math.random() * (colors.length - 1))],
-              //-------------------------------------------------------------------------------------------\\
-              images[`image${imageIndex % 100}`],
-              //-------------------------------------------------------------------------------------------//
+              CORE_SKILLS[imageIndex % CORE_SKILLS.length].color,
+              loadedImages[imageIndex % CORE_SKILLS.length],
             );
-            //-------------------------------------------------------------------------------------------\\
             imageIndex++;
-            //-------------------------------------------------------------------------------------------//
           }
           /* ---- CONTROL for smartphone HERE (remove the line for smartphone screen) ---- */
           x += RADIUS * 2 + PADDINGX; //increase x for the next circle
         }
         if (i === 2) {
           addCircle(
-            colors[Math.round(Math.random() * (colors.length - 1))],
-            //-------------------------------------------------------------------------------------------\\
-            images[`image${imageIndex % 3}`],
-            //-------------------------------------------------------------------------------------------//
+            CORE_SKILLS[imageIndex % CORE_SKILLS.length].color,
+            loadedImages[imageIndex % CORE_SKILLS.length],
           );
-          //-------------------------------------------------------------------------------------------\\
           imageIndex++;
-          //-------------------------------------------------------------------------------------------//
         }
         x = i % 2 === 0 ? PADDINGX / 2 + RADIUS : 0;
         y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
       }
     }
 
-    //-------------------------------------------------------------------------------------------\\
+    function loadImage(skill) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = skill.image;
+      });
+    }
     function addCircle(colour, image) {
-      //-------------------------------------------------------------------------------------------//
       circles.push({
         x: x,
         y: y,
         color: colour,
-        //-------------------------------------------------------------------------------------------\\
         image: image,
-        //-------------------------------------------------------------------------------------------//
       });
     }
 
@@ -152,7 +114,6 @@ function CircularMenu() {
         ctx.beginPath();
         ctx.arc(0, 0, RADIUS, 0, Math.PI * 2);
         ctx.fill();
-        //-------------------------------------------------------------------------------------------\\
         if (circles[i].image) {
           const imageSize = RADIUS * 1.5; // Adjust image size as needed
           ctx.drawImage(
@@ -163,7 +124,6 @@ function CircularMenu() {
             imageSize,
           );
         }
-        //-------------------------------------------------------------------------------------------//
         ctx.restore();
       }
 
@@ -189,7 +149,7 @@ function CircularMenu() {
     }
 
     function handleTouch(e) {
-      //window.addEventListener("touchmove", handleSwipe);
+      window.addEventListener("touchmove", handleSwipe);
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       oldOffsetX = offsetX;
@@ -235,7 +195,7 @@ function CircularMenu() {
     });
     window.addEventListener("resize", () => {
       canvas.height = window.innerHeight / 2;
-      canvas.width = window.innerWidth / 2;
+      canvas.width = window.innerWidth;
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
     });
