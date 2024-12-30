@@ -149,7 +149,7 @@ function CircularMenu() {
     }
 
     function handleTouch(e) {
-      window.addEventListener("touchmove", handleSwipe);
+      canvas.addEventListener("touchmove", handleSwipe);
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       oldOffsetX = offsetX;
@@ -166,8 +166,8 @@ function CircularMenu() {
     }
 
     function handleClick(e) {
-      window.addEventListener("mousemove", handleMouse);
-      window.addEventListener("mouseup", handleRelease);
+      canvas.addEventListener("mousemove", handleMouse);
+      canvas.addEventListener("mouseup", handleRelease);
       startX = e.clientX;
       startY = e.clientY;
       oldOffsetX = offsetX;
@@ -183,15 +183,15 @@ function CircularMenu() {
     }
 
     function handleRelease() {
-      window.removeEventListener("mouseup", handleRelease);
-      window.removeEventListener("mousemove", handleMouse);
+      canvas.removeEventListener("mouseup", handleRelease);
+      canvas.removeEventListener("mousemove", handleMouse);
       canvas.style.cursor = "grab";
     }
 
-    window.addEventListener("touchstart", handleTouch);
-    window.addEventListener("mousedown", handleClick);
-    window.addEventListener("touchend", () => {
-      window.removeEventListener("touchmove", handleSwipe);
+    canvas.addEventListener("touchstart", handleTouch);
+    canvas.addEventListener("mousedown", handleClick);
+    canvas.addEventListener("touchend", () => {
+      canvas.removeEventListener("touchmove", handleSwipe);
     });
     window.addEventListener("resize", () => {
       canvas.height = window.innerHeight / 2;

@@ -63,7 +63,7 @@ export const CORE_SKILLS = [
     // 17
     image: s17,
     title: "Selenium",
-    color: "#161616",
+    color: "#000000",
     project: [],
   },
   {
