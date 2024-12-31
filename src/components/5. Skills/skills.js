@@ -1,14 +1,14 @@
-import s0 from "./media/skill_0_DUMMY.png";
-import s1 from "./media/skill_1_1.png";
-import s2 from "./media/skill_1_2.png";
-import s3 from "./media/skill_2.png";
-import s4 from "./media/skill_3.png";
-import s5 from "./media/skill_4.png";
-import s6 from "./media/skill_5.png";
-import s7 from "./media/skill_6.png";
+import s0 from "./media/skill_0_DUMMY.png"; // Empty Slot
+import s1 from "./media/skill_1_1.png"; // html
+import s2 from "./media/skill_1_2.png"; // css
+import s3 from "./media/skill_2.png"; // javascript
+import s4 from "./media/skill_3.png"; // react
+import s5 from "./media/skill_4.png"; // react native
+import s6 from "./media/skill_5.png"; // python
+import s7 from "./media/skill_6.png"; // fastapi
 import s8 from "./media/skill_10.png"; // snowflake
-import s9 from "./media/skill_7.png";
-import s10 from "./media/skill_8.png";
+import s9 from "./media/skill_7.png"; // raspberrypi
+import s10 from "./media/skill_8.png"; // mariadb
 import s13 from "./media/skill_13.png"; // servicenow
 import s17 from "./media/skill_17.png"; // selenium
 import s18 from "./media/skill_18.png"; // java

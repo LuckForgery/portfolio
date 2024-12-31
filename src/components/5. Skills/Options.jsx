@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { CORE_SKILLS } from "./skills.js";
 
-function CircularMenu() {
+function Options() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -217,4 +217,4 @@ function CircularMenu() {
   );
 }
 
-export default CircularMenu;
+export default Options;

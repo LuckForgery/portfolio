@@ -1,4 +1,4 @@
-import SkillBoard from "./tester.jsx"; //SkillBoard
+import SkillBoard from "./SkillBoard.jsx"; //SkillBoard
 
 export default function CoreSkills() {
   return (

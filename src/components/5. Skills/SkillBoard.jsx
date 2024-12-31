@@ -1,12 +1,12 @@
-import setSkills from "./HandleSkills.js";
+import React from "react";
+import Options from "./Options.jsx"; // Assuming CircularMenu is in the same directory
 
-export default function SkillBoard() {
-  setSkills();
+function SkillBoard() {
   return (
     <>
-      <table id="dynamicTable">
-        <tbody></tbody>
-      </table>
+      <Options />
     </>
   );
 }
+
+export default SkillBoard;
