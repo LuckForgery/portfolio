@@ -149,6 +149,7 @@ function Options() {
     }
 
     function handleTouch(e) {
+      document.body.style.overflow = "hidden";
       canvas.addEventListener("touchmove", handleSwipe);
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
@@ -191,6 +192,7 @@ function Options() {
     canvas.addEventListener("touchstart", handleTouch);
     canvas.addEventListener("mousedown", handleClick);
     canvas.addEventListener("touchend", () => {
+      document.body.style.overflow = "auto";
       canvas.removeEventListener("touchmove", handleSwipe);
     });
     window.addEventListener("resize", () => {
