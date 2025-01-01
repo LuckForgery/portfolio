@@ -28,7 +28,7 @@ a {
     margin-right: auto;
     margin-bottom: 6px;
     width: 70%;
-    min-width: 422px;
+    //min-width: 422px;
     max-width: 800px;
 }
 .navBar tr {

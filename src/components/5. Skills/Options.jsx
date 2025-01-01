@@ -158,12 +158,10 @@ function Options() {
     }
 
     function handleSwipe(e) {
-      //disable page scroll
       mouseX = e.changedTouches[0].clientX;
       mouseY = e.changedTouches[0].clientY;
       offsetX = oldOffsetX + mouseX - startX;
       offsetY = oldOffsetY + mouseY - startY;
-      //re-enable page scroll
     }
 
     function handleClick(e) {
