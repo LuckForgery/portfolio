@@ -10,7 +10,7 @@ function Options() {
     if (!canvas) return;
 
     canvas.width = parent.offsetWidth;
-    canvas.height = parent.offestHeight / 2; //set canvas to full size of the window
+    canvas.height = window.innerHeight / 2; //set canvas to full size of the window
     const ctx = canvas.getContext("2d"); //get the canvas from html
     var HORIZONTAL = 6,
       VERTICAL = 5,
@@ -195,7 +195,7 @@ function Options() {
       canvas.removeEventListener("touchmove", handleSwipe);
     });
     window.addEventListener("resize", () => {
-      canvas.height = parent.offsetHeight / 2;
+      canvas.height = window.innerHeight / 2;
       canvas.width = parent.offsetWidth;
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
