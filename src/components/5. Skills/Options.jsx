@@ -212,7 +212,12 @@ function Options() {
   return (
     <canvas
       ref={canvasRef}
-      style={{ display: "flex", margin: "0 auto", cursor: "grab" }}
+      style={{
+        display: "flex",
+        marginRight: "auto",
+        marginLeft: "auto",
+        cursor: "grab",
+      }}
     />
   );
 }
