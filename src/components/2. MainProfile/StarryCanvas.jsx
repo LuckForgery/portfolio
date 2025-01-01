@@ -11,7 +11,7 @@ const StarryCanvas = () => {
     console.log("Parent size:", parent.offsetWidth, parent.offsetHeight);
 
     const setCanvasSize = () => {
-      canvas.width = window.width; //parent.offsetWidth;
+      canvas.width = parent.offsetWidth;
       canvas.height = parent.offsetHeight;
     };
 

@@ -133,7 +133,7 @@ a {
     align-items: center;
     z-index: 0;
     display: flex;
-    width: 100vw;
+    width: 100%;
     -webkit-mask-image: linear-gradient(to bottom, black 1%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
