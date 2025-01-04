@@ -210,7 +210,17 @@ function Options() {
     };
   }, [canvasRef]);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        display: "flex",
+        marginRight: "auto",
+        marginLeft: "auto",
+        cursor: "grab",
+      }}
+    />
+  );
 }
 
 export default Options;
