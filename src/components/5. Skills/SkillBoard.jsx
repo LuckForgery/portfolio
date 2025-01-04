@@ -4,7 +4,12 @@ import Options from "./Options.jsx"; // Assuming CircularMenu is in the same dir
 function SkillBoard() {
   return (
     <>
-      <Options />
+      <Options
+        display="flex"
+        marginRight="auto"
+        marginLeft="auto"
+        cursor="grab"
+      />
     </>
   );
 }

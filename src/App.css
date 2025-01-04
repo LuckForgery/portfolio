@@ -227,7 +227,7 @@ a {
 
 .collection {
     height: 50vh;
-    max-height: 600px;
+    max-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,9 +240,9 @@ a {
 }
 .collection .content {
     height: 50vh; /*28rem*/
-    max-height: 500px;
+    max-height: 375px;
     width: 30vh; /*25rem*/
-    max-width: 300px;
+    max-width: 225px;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -291,7 +291,7 @@ a {
     background-color: #161616;
     opacity: 90%;
 
-    font-size: clamp(1px, 1.6vh, 16px);
+    font-size: clamp(1px, 1.6vh, 14px);
 }
 
 #timeEnclosure {
@@ -306,43 +306,11 @@ a {
     margin-right: 3%;
     justify-content: right;
 
-    font-size: clamp(1px, 2vh, 20px);
+    font-size: clamp(1px, 2vh, 18px);
     opacity: 90%;
 }
 
 #timeEnclosure section {
     font-weight: 600;
     opacity: 90%;
-}
-
-.content .status {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 3;
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
-}
-.content #active {
-    background-color: greenyellow;
-}
-.content #inacive {
-    background-color: orangered;
-}
-
-#dynamicTable {
-    width: auto;
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-#dynamicTable th,
-#dynamicTable td {
-    border: 0px solid black;
-    padding: 8px;
-    text-align: center;
-    min-width: 30px;
-}
-#dynamicTable tr {
-    display: table-row;
 }
